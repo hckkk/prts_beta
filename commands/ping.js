@@ -13,7 +13,7 @@ module.exports = {
     async execute(interaction,client) {
         const integer = interaction.options.getInteger('理智剩余');
         const user = interaction.user;
-        if (user&&(integer>=0)){
+        if (user&&(integer>=0)&&(integer<=135)){
             await interaction.reply('收到！');
             await wait((135-integer)*5*60*1000);
             //await wait(2000);
