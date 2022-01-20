@@ -26,7 +26,7 @@ module.exports = {
                 await client.channels.cache.get('933472514028494899').send(`清理智啦！${user}`);
             }
         }else {
-            await interaction.reply('输入有误');
+            await interaction.reply('输入有误!');
         }
     },
 };
