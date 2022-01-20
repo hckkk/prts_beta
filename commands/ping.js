@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const wait = require('util').promisify(setTimeout);
-
+let users={};
 
 
 module.exports = {
@@ -14,13 +14,19 @@ module.exports = {
         const integer = interaction.options.getInteger('理智剩余');
         const user = interaction.user;
         if (user&&(integer>=0)&&(integer<=135)){
-            await interaction.reply('收到！');
+            if (users[user]){
+                await interaction.reply('收到，倒计时已更新！');
+            }else {
+                await interaction.reply('收到！');
+            }
+            let x = Date()
+            users[user]=x;
             await wait((135-integer)*5*60*1000);
-            //await wait(2000);
-            await client.channels.cache.get('933472514028494899').send(`清理智啦！${user}`);
+            if (users[user]===x){
+                await client.channels.cache.get('933472514028494899').send(`清理智啦！${user}`);
+            }
         }else {
             await interaction.reply('输入有误');
         }
-
     },
 };
