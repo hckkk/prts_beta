@@ -21,7 +21,7 @@ module.exports = {
             }
             let x = Date()
             users[user]=x;
-            await wait((135-integer)*5*60*1000);
+            await wait((135-integer)*6*60*1000);
             if (users[user]===x){
                 await client.channels.cache.get('933472514028494899').send(`清理智啦！${user}`);
             }
