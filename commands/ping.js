@@ -5,7 +5,7 @@ let users={};
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName('sens')
+        .setName('sans')
         .setDescription('理智满了会提醒你哦!')
         .addIntegerOption(option => option.setName('理智剩余').setDescription('理智剩余')),
 
