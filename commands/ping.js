@@ -23,7 +23,8 @@ module.exports = {
             users[user]=x;
             await wait((135-integer)*6*60*1000);
             if (users[user]===x){
-                await client.channels.cache.get('933472514028494899').send(`清理智啦！${user}`);
+                await client.channels.cache.get('931761629127921734').send(`清理智啦！${user}`);
+                users.delete(user);
             }
         }else {
             await interaction.reply('输入有误!');
