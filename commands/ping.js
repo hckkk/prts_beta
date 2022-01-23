@@ -7,8 +7,9 @@ module.exports = {
     data: new SlashCommandBuilder()
         .setName('sans')
         .setDescription('理智满了会提醒你哦!')
-        .addIntegerOption(option => option.setName('理智剩余').setDescription('理智剩余'))
-        .addIntegerOption(option => option.setName('理智上限').setDescription('理智上限')),
+
+        .addIntegerOption(option => option.setName('理智上限').setDescription('理智上限'))
+        .addIntegerOption(option => option.setName('理智剩余').setDescription('理智剩余')),
 
         //.addUserOption(option => option.setName('目标').setDescription('目标（选自己）')),
     async execute(interaction,client) {
