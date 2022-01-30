@@ -47,10 +47,15 @@ client.on('messageReactionAdd', async (reaction, user) => {
         }
     }
     if (reaction.message.id == 937468677190746174) {
-        if (users[user]){
+        if (users[user]&&users[user]===1){
+            users[user]+=1
             reaction.users.remove(user.id)
         }else {
-            users[user]=1
+            if (!users[user]){
+                users[user]=1;
+            }else{
+                users[user]+=1
+            }
             if (reaction.emoji.name == 'LDD') await reaction.message.guild.members.cache.get(user.id).roles.add('931753997390450740');
             if (reaction.emoji.name == 'QEWL') await reaction.message.guild.members.cache.get(user.id).roles.add('931752853972852787');
             if (reaction.emoji.name == 'KLMY') await reaction.message.guild.members.cache.get(user.id).roles.add('931753268772765727');
@@ -73,7 +78,8 @@ client.on('messageReactionRemove', async (reaction, user) => {
     }
     if (reaction.message.id == 937468677190746174) {
         if (users[user]){
-            delete users[user]
+
+            users[user]-=1
             if (reaction.emoji.name == 'LDD') await reaction.message.guild.members.cache.get(user.id).roles.remove('931753997390450740');
             if (reaction.emoji.name == 'QEWL') await reaction.message.guild.members.cache.get(user.id).roles.remove('931752853972852787');
             if (reaction.emoji.name == 'KLMY') await reaction.message.guild.members.cache.get(user.id).roles.remove('931753268772765727');
