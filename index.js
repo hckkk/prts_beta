@@ -71,7 +71,7 @@ client.on('messageReactionRemove', async (reaction, user) => {
             console.error('Something went wrong when fetching the message: ', error);
         }
     }
-    if (reaction.message.id == 937225782042968164) {
+    if (reaction.message.id == 937459633575043102) {
         if (users[user]){
             delete users[user]
             if (reaction.emoji.name == 'LDD') await reaction.message.guild.members.cache.get(user.id).roles.remove('931753997390450740');
