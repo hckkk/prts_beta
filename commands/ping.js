@@ -34,7 +34,7 @@ module.exports = {
                 delete users[user];
             }
         }else {
-            await interaction.reply('输入有误!');
+            await interaction.reply({ content: '输入有误!', ephemeral: true });
         }
     },
 };
