@@ -46,7 +46,7 @@ client.on('messageReactionAdd', async (reaction, user) => {
             console.error('Something went wrong when fetching the message: ', error);
         }
     }
-    if (reaction.message.id == 937468677190746174) {
+    if (reaction.message.id == 937473222302138428) {
         if (users[user]&&users[user]===1){
             users[user]+=1
             reaction.users.remove(user.id)
@@ -76,7 +76,7 @@ client.on('messageReactionRemove', async (reaction, user) => {
             console.error('Something went wrong when fetching the message: ', error);
         }
     }
-    if (reaction.message.id == 937468677190746174) {
+    if (reaction.message.id == 937473222302138428) {
         if (users[user]){
 
             users[user]-=1
