@@ -46,9 +46,9 @@ client.on('messageReactionAdd', async (reaction, user) => {
             console.error('Something went wrong when fetching the message: ', error);
         }
     }
-    if (reaction.message.id == 937459633575043102) {
+    if (reaction.message.id == 937468677190746174) {
         if (users[user]){
-            reaction.remove()
+            reaction.users.remove(user.id)
         }else {
             users[user]=1
             if (reaction.emoji.name == 'LDD') await reaction.message.guild.members.cache.get(user.id).roles.add('931753997390450740');
@@ -71,7 +71,7 @@ client.on('messageReactionRemove', async (reaction, user) => {
             console.error('Something went wrong when fetching the message: ', error);
         }
     }
-    if (reaction.message.id == 937459633575043102) {
+    if (reaction.message.id == 937468677190746174) {
         if (users[user]){
             delete users[user]
             if (reaction.emoji.name == 'LDD') await reaction.message.guild.members.cache.get(user.id).roles.remove('931753997390450740');
