@@ -46,7 +46,7 @@ client.on('messageReactionAdd', async (reaction, user) => {
             console.error('Something went wrong when fetching the message: ', error);
         }
     }
-    if (reaction.message.id == 937225782042968164) {
+    if (reaction.message.id == 937459633575043102) {
         if (users[user]){
             reaction.remove()
         }else {
