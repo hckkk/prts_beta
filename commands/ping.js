@@ -22,16 +22,16 @@ module.exports = {
         const user = interaction.user;
         if (user&&(integer>=0)&&(integer<=up)&&(up>0)&&(up<=135)){
             if (users[user]){
-                await interaction.reply('收到，倒计时已更新！');
+                await interaction.reply({ content: '收到，倒计时已更新!', ephemeral: true });
             }else {
-                await interaction.reply('收到！');
+                await interaction.reply({ content: '收到!', ephemeral: true });
             }
             let x = Date()
             users[user]=x;
             await wait((up-integer)*6*60*1000);
             if (users[user]===x){
                 await client.channels.cache.get('931761629127921734').send(`清理智啦！${user}`);
-                users.delete(user);
+                delete users[user];
             }
         }else {
             await interaction.reply('输入有误!');
